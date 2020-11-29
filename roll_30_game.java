@@ -1,3 +1,7 @@
+///////////////////////
+// Roll 30 Java Game
+// By: Eli Vincelette
+///////////////////////
 
 
 
@@ -11,15 +15,12 @@ import java.util.Random;
 
 
 
-
+// roll 30 class 
 public class roll_30_game {
 
 	
 	
-//random method for getting random numbers for the dice rolls
-	public static int intRandom() {
-		 int n = rand.nextInt(5);
-		 }
+
 //Main class
 public static void main (String [] args ) {
 	
@@ -49,11 +50,15 @@ public static void main (String [] args ) {
 	//while loop that keeps game going until one player reaches a score of 30 
 	while (player1score != 30 || player2score != 30)
 	{
-		System.out.println("It is player ones turn");
+		System.out.println("It is " + player1 + " turn");
 			 int roll1 = rand.nextInt(5);
 			 roll1++;
 			 int roll2 = rand.nextInt(5);
 			 roll2++;
+			 int roll3 = rand.nextInt(5);
+			 roll3++;
+			 int roll4 = rand.nextInt(5);
+			 roll4++;
 			 
 			 System.out.println( player1 + " rolled first a " + roll1 + " then a " +roll2 );
 			 System.out.println("Enter 1 to keep your first dice's roll, 2 to keep the second's roll or 3 to keep both! : ");
@@ -77,25 +82,27 @@ public static void main (String [] args ) {
 			 
 			 System.out.println(player1 + " your score is " + player1score);
 			
+				if (player1score == 30)  //if statement checking if player1 won that turn
+					System.out.println( player1 + " you have won the game!");
 			 
 			 
-			 
-			 System.out.println("It is player two's turn! ");
-			 
-			 System.out.println("Player one rolled first a " + roll1 + " then a " +roll2 );
+			 System.out.println("It is " + player2 + "'s turn! "); //if statement checking if player2 won that turn
+			 System.out.println( player2 + " rolled first a " + roll3 + " then a " +roll4 );
 			 System.out.println("Enter 1 to keep your first dice's roll, 2 to keep the second's roll or 3 to keep both! : ");
+			 
 			 int choice2 = newObj.nextInt();
+			
 			 if (choice2 == 1)
 			 {
-				 player1score = player1score + roll1;
+				 player2score = player2score + roll3;
 			 }
 			 if (choice2 == 2)
 			 {
-				 player1score = player1score + roll2;
+				 player2score = player2score + roll4;
 			 }
 			 else if (choice2 == 3)
 			 {
-				 player1score = player1score + roll1 + roll2;
+				 player2score = player2score + roll3 + roll4;
 			 }
 			 else
 			 {
@@ -104,13 +111,14 @@ public static void main (String [] args ) {
 			 
 			 
 			 System.out.println(player2 + " your score is " + player2score);
+			 
+			
+
+				if(player2score == 30)
+					System.out.println(player2 + " you have won the game!");
 	}
 	
-	if (player1score == 30)
-		System.out.println( player1 + " you have won the game!");
 
-	else if(player2score == 30)
-		System.out.println(player2 + " you have won the game!");
 }	
 	
 	
