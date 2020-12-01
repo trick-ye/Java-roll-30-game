@@ -50,7 +50,7 @@ public static void main (String [] args ) {
 	//while loop that keeps game going until one player reaches a score of 30 
 	while (player1score != 30 || player2score != 30)
 	{
-		System.out.println("It is " + player1 + " turn");
+		System.out.println("It is " + player1 + " turn! Your current score is:  " + player1score);
 			 int roll1 = rand.nextInt(5);
 			 roll1++;
 			 int roll2 = rand.nextInt(5);
@@ -82,11 +82,13 @@ public static void main (String [] args ) {
 			 
 			 System.out.println(player1 + " your score is " + player1score);
 			
-				if (player1score == 30)  //if statement checking if player1 won that turn
+				if (player1score == 30) { //if statement checking if player1 won that turn
 					System.out.println( player1 + " you have won the game!");
+					System.exit(0);
+				}					
 			 
 			 
-			 System.out.println("It is " + player2 + "'s turn! "); //if statement checking if player2 won that turn
+			 System.out.println("It is " + player2 + "'s turn! Your current score is:  " + player2score); //if statement checking if player2 won that turn
 			 System.out.println( player2 + " rolled first a " + roll3 + " then a " +roll4 );
 			 System.out.println("Enter 1 to keep your first dice's roll, 2 to keep the second's roll or 3 to keep both! : ");
 			 
@@ -100,11 +102,11 @@ public static void main (String [] args ) {
 			 {
 				 player2score = player2score + roll4;
 			 }
-			 else if (choice2 == 3)
+			 if (choice2 == 3)
 			 {
 				 player2score = player2score + roll3 + roll4;
 			 }
-			 else
+			 if (choice2 != 3 || choice2 != 2 || choice2 != 1 )
 			 {
 				 System.out.println("Please input a valid number");
 			 }
@@ -114,9 +116,12 @@ public static void main (String [] args ) {
 			 
 			
 
-				if(player2score == 30)
+				if(player2score == 30) {
 					System.out.println(player2 + " you have won the game!");
-	}
+					System.exit(0);
+				}
+				
+			}
 	
 
 }	
